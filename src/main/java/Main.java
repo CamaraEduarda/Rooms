@@ -26,9 +26,11 @@ public class Main {
 
 
     adm.creatRoom(sala1);
-    adm.creatRoom(sala2);
+    adm.creatRoom(sala3);
+    
     
     adm.exibirSalas();
+ 
     
   }
 

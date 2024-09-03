@@ -2,6 +2,7 @@ package System;
 
 import Interface.AdministratorInterface;
 import java.util.ArrayList;
+import java.util.List;
 import Domain.*;
 import Enum.RoomType;
 
@@ -10,14 +11,15 @@ import Enum.RoomType;
  */
 public class Administration implements AdministratorInterface {
 
-  private ArrayList<Room> roomes = new ArrayList<Room>();;
+  private ArrayList<Room> roomes = new ArrayList<Room>();
   
   public void creatRoom(Room room) {
     if(room != null){
       roomes.add(room);
     }
-
+    
   }
+
   public String researchRoom(Room room, int id) {
     if(room.getId() == id){
       return "Sala existente";
@@ -25,22 +27,23 @@ public class Administration implements AdministratorInterface {
     return "Sala não existente";
 
   }
-  
+
   public void updateRoom(Room room, int id, RoomType type, int capacity) {
     roomes.remove(room);
     roomes.add(new Room(id, type, capacity, true));
 
   }
 
-  
   public void deleteRoom(Room room) {
    roomes.remove(room);
 
   }
+    
+  
 
   public void exibirSalas(){
     for (Room room : roomes){
-      System.out.println("Room "+room.getType() + ":");
+      System.out.println("id: "+room.getId() + "\t RoomeType: " +room.getType() + "\t Capacity: "+room.getCapacity());
 
     }
   }

@@ -28,5 +28,12 @@ public class Room{
     return this.capacity;
   }
 
+  public boolean isAvailable() {
+    return isAvailable;
+  }
+
+  public void setAvailable(boolean isAvailable) {
+    this.isAvailable = isAvailable;
+  }
 
 }
